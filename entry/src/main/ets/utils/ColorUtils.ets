@@ -2,8 +2,12 @@ export interface RGB { r: number; g: number; b: number }
 export interface RGBA extends RGB { a: number }
 
 export function clampByte(n: number): number {
-  if (n < 0) return 0
-  if (n > 255) return 255
+  if (n < 0){
+    return 0
+  }
+  if (n > 255){
+    return 255
+  }
   return n | 0
 }
 
@@ -16,7 +20,9 @@ export function rgbToHex(c: RGB): string {
 
 export function hexToRgb(hex: string): RGB | null {
   const m = /^#?([0-9a-fA-F]{6})$/.exec(hex)
-  if (!m) return null
+  if (!m){
+    return null
+  }
   const n = parseInt(m[1], 16)
   return { r: (n >> 16) & 0xff, g: (n >> 8) & 0xff, b: n & 0xff }
 }

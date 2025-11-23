@@ -13,7 +13,7 @@ interface ThemeConf {
 const THEMES: ThemeConf[] = [
   { bg: Color.Black, fg: Color.White, ring: Color.White, border: 3 },
   { bg: Color.White, fg: Color.Black, ring: Color.Black, border: 3 },
-  { bg: Color.Gray,  fg: Color.Black, ring: Color.White, border: 4 },
+  { bg: Color.Gray, fg: Color.Black, ring: Color.White, border: 4 },
 ]
 
 
@@ -39,7 +39,9 @@ struct Index {
   }
 
   private ensureAnimator() {
-    if (this.anim) return
+    if (this.anim){
+      return
+    }
     const opts: AnimatorOptions = {
       duration: 1800,
       easing: 'smooth',

@@ -13,18 +13,30 @@ function nowIso(): string {
   // YYYY-MM-DD HH:mm:ss.mmm
   const d = new Date()
   const pad = (n: number, w: number = 2) => n.toString().padStart(w, '0')
-  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} `
-    + `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}.${pad(d.getMilliseconds(),3)}`
+  return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ` +
+    `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}.${pad(d.getMilliseconds(),3)}`
 }
 
 function levelLabel(level: LogLevel): string {
   switch (level) {
-    case LogLevel.Error: return 'ERROR'
-    case LogLevel.Warn:  return 'WARN'
-    case LogLevel.Info:  return 'INFO'
-    case LogLevel.Debug: return 'DEBUG'
-    case LogLevel.Trace: return 'TRACE'
-    default:             return 'OFF'
+    case LogLevel.Error:
+      return 'ERROR'
+
+    case LogLevel.Warn:
+      return 'WARN'
+
+    case LogLevel.Info:
+      return 'INFO'
+
+    case LogLevel.Debug:
+      return 'DEBUG'
+
+    case LogLevel.Trace:
+      return 'TRACE'
+
+    default:
+      return 'OFF'
+
   }
 }
 
@@ -57,8 +69,12 @@ export class Logger {
   }
 
   private emit(level: LogLevel, msg: string): void {
-    if (level <= LogLevel.Off) return
-    if (level > this._level) return
+    if (level <= LogLevel.Off){
+      return
+    }
+    if (level > this._level){
+      return
+    }
     this._sink(level, this._tag, msg)
   }
 
