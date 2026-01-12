@@ -48,7 +48,7 @@ export const PRESETS: PulsePreset[] = [
     max: 128,
     duration: 1200,
     easing: 'fast-out-slow-in'
-  },
+  }
 ]
 
 export function getPresetByName(name: string): PulsePreset | undefined {

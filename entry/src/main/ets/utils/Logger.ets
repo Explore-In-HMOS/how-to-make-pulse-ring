@@ -4,7 +4,7 @@ export enum LogLevel {
   Warn = 2,
   Info = 3,
   Debug = 4,
-  Trace = 5,
+  Trace = 5
 }
 
 export type LogSink = (level: LogLevel, tag: string, message: string) => void

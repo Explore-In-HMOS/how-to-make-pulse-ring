@@ -34,12 +34,18 @@ entry/
 ├── src/main/ets/
 │ ├── pages/
 │ │ └── Index.ets // PulseRing main screen (wearable-optimized)
-│ ├── components/ // (optional) future UI parts
+│ │
+│ ├── viewmodel
+│ │ └── SettingsVM.ets 
+│ │
 │ ├── model/ // (optional) entities
-│ ├── utils/ // (optional) helpers
-│ └── viewmodel/ // (optional) state/VM
+│ │ └── Preset.ets 
+│ │
+│ └── utils/ // (optional) helpers 
+│   └── ColorUtils.ets 
+│   └── Logger.ets 
+│
 └── src/main/resources/
-└── base/ // themes/strings/media (if any)
 ```
 
 # Constraints and Restrictions

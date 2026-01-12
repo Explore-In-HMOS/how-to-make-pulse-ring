@@ -26,7 +26,7 @@ export class SettingsVM {
     return {
       themeIdx: this._themeIdx,
       preset: this._preset ? this._preset.name : undefined,
-      ringHex: this._ringHex ?? undefined,
+      ringHex: this._ringHex ?? undefined
     }
   }
 

@@ -13,7 +13,7 @@ interface ThemeConf {
 const THEMES: ThemeConf[] = [
   { bg: Color.Black, fg: Color.White, ring: Color.White, border: 3 },
   { bg: Color.White, fg: Color.Black, ring: Color.Black, border: 3 },
-  { bg: Color.Gray, fg: Color.Black, ring: Color.White, border: 4 },
+  { bg: Color.Gray, fg: Color.Black, ring: Color.White, border: 4 }
 ]
 
 
@@ -117,7 +117,7 @@ struct Index {
       Row() {
         ForEach(
           RING_PALETTE,
-          (c: Color, idx: number) => {
+          (c: Color) => {
             Stack()
               .width(18).height(18)
               .border({ width: 1, color: this.theme().fg, radius: 9 })
@@ -126,7 +126,7 @@ struct Index {
               .gesture(TapGesture().onAction(() => { this.ringColor = c }))
           },
 
-          (c: Color, idx: number) => idx.toString()
+          (c: Color) => c.toString()
         )
       }
       .justifyContent(FlexAlign.Center)

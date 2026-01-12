@@ -32,7 +32,7 @@ export function mix(a: RGB, b: RGB, t: number): RGB {
   return {
     r: (a.r + (b.r - a.r) * k) | 0,
     g: (a.g + (b.g - a.g) * k) | 0,
-    b: (a.b + (b.b - a.b) * k) | 0,
+    b: (a.b + (b.b - a.b) * k) | 0
   }
 }
 
